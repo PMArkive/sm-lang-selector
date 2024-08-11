@@ -423,7 +423,7 @@ void ResetPlayerLanguage(int client)
 void LoadPlayerLanguage(int client)
 {
     if (!AreClientCookiesCached(client))
-        ThrowError("Client cookies are not cached.");
+        ThrowError("Tried to LoadPlayerLanguage(%L) but cookies are not cached.", client);
 
     g_HasLanguageLoaded[client] = true;
     g_ClientPromptState[client] = State_None;
